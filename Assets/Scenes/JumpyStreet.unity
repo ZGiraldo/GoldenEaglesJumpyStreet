@@ -252,7 +252,7 @@ MonoBehaviour:
   - {fileID: 1354736620754956380, guid: cb15b3f5f9c5ae240a429ea7f6dddd9c, type: 3}
   - {fileID: 3557053647053585350, guid: 7ed6f2b99acdfc144abe294da0ab0ed0, type: 3}
   - {fileID: 969143792383989565, guid: 96fe1810fbe76b84296999eaf2bc5ec5, type: 3}
-  terrainLimit: 6
+  terrainLimit: 3
 --- !u!4 &354359934
 Transform:
   m_ObjectHideFlags: 0
