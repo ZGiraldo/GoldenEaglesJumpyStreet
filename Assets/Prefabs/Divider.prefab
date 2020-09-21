@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 57043037210365754}
   - component: {fileID: 5363421713481662440}
   - component: {fileID: 7501721615901852201}
+  - component: {fileID: 298289589319873596}
   m_Layer: 0
   m_Name: Divider
   m_TagString: Terrain
@@ -109,3 +110,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainCounterNum: 0
+--- !u!65 &298289589319873596
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354736620754956380}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.2, z: 0.8}
+  m_Center: {x: 0, y: 0, z: 0}
