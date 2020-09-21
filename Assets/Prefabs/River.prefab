@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 48002880669166756}
   - component: {fileID: 7661215301265398862}
   - component: {fileID: 6901127399972927536}
+  - component: {fileID: 9112593114303831533}
+  - component: {fileID: 3964292338133461167}
+  - component: {fileID: 8502056878345948040}
   m_Layer: 0
   m_Name: River
   m_TagString: Terrain
@@ -109,3 +112,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainCounterNum: 0
+--- !u!65 &9112593114303831533
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969143792383989565}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.2, z: 0.29}
+  m_Center: {x: 0, y: 0, z: -0.35}
+--- !u!65 &3964292338133461167
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969143792383989565}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.2, z: 0.29}
+  m_Center: {x: 0, y: 0, z: 0.35}
+--- !u!65 &8502056878345948040
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 969143792383989565}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1.2, z: 0.29}
+  m_Center: {x: 0, y: 0, z: 0}
