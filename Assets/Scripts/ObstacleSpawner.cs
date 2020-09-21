@@ -18,8 +18,6 @@ public class ObstacleSpawner : MonoBehaviour
     {
         int num = Random.Range(0, obstacles.Count);
 
-        Debug.Log(num);
-
         Instantiate(obstacles[num], transform.position, Quaternion.Euler(-90, 0, spawnerRotation), gameObject.transform);
         SpawnDelay();
     }

@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 5853734106512958522}
   m_Layer: 0
   m_Name: car3
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
