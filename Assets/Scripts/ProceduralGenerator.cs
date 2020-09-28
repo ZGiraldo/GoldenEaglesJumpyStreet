@@ -46,18 +46,20 @@ public class ProceduralGenerator : MonoBehaviour
     void Start()
     {
         terrainLimitStatic = terrainLimit;
-        Instantiate(terrains[0], new Vector3(0,0,.5f), Quaternion.identity);
+        Instantiate(terrains[0], new Vector3(0,0,.5f), Quaternion.identity, gameObject.transform);
         GenerateTerrain();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            terrainSpawned--;
-            GenerateTerrain();
-        }
+
+    }
+
+    public void TrackTerrain()
+    {
+        terrainSpawned--;
+        GenerateTerrain();
     }
 
     private void GenerateTerrain()
@@ -87,21 +89,21 @@ public class ProceduralGenerator : MonoBehaviour
     private void GenerateStreet() //for now the addition to zPosition will be hard coded, make it for flexible later*****
     {
         zPosition++;
-        Instantiate(terrains[1], new Vector3(0, 0, zPosition), Quaternion.identity);
+        Instantiate(terrains[1], new Vector3(0, 0, zPosition), Quaternion.identity, gameObject.transform);
         zPosition++;
     }
 
     private void GenerateDivider()
     {
         zPosition += .5f;
-        Instantiate(terrains[0], new Vector3(0, 0, zPosition), Quaternion.identity);
+        Instantiate(terrains[0], new Vector3(0, 0, zPosition), Quaternion.identity, gameObject.transform);
         zPosition += .5f;
     }
 
     private void GenerateRiver()
     {
         zPosition += 1.5f;
-        Instantiate(terrains[2], new Vector3(0, 0, zPosition), Quaternion.identity);
+        Instantiate(terrains[2], new Vector3(0, 0, zPosition), Quaternion.identity, gameObject.transform);
         zPosition += 1.5f;
     }
 }

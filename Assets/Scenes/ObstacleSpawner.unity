@@ -349,6 +349,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
+      propertyPath: obstacles.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
+      propertyPath: obstacles.Array.data[0]
+      value: 
+      objectReference: {fileID: 2966447602232481131, guid: 68956b63205d906409cca65d52b557b6, type: 3}
+    - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
+      propertyPath: obstacles.Array.data[1]
+      value: 
+      objectReference: {fileID: 5393361084573947228, guid: 15d1c5265de6d1340afa1b753d8a744f, type: 3}
+    - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
+      propertyPath: obstacles.Array.data[2]
+      value: 
+      objectReference: {fileID: 5846111148176706129, guid: fdbc0d98001c2244d91907e75825692f, type: 3}
+    - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
+      propertyPath: obstacles.Array.data[3]
+      value: 
+      objectReference: {fileID: 3916783141521667734, guid: f3be8ef7a45c56742bde11e92a12fc43, type: 3}
+    - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
+      propertyPath: obstacles.Array.data[4]
+      value: 
+      objectReference: {fileID: 4135955911269910746, guid: 884e062e4ea0d304eb9c2cd25a86520d, type: 3}
+    - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
+      propertyPath: spawnerRotation
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 5067575999706406443, guid: c38947162332e174dbd142f337f5d463, type: 3}
       propertyPath: m_Name
       value: VehicleSpawner
