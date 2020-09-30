@@ -43,7 +43,7 @@ public class CameraSystem: MonoBehaviour
     void DistanceChecker()
     {
         float distanceToPlayer = playerTransform.position.z -  transform.position.z;
-        Debug.Log(distanceToPlayer);
+        //Debug.Log(distanceToPlayer);
 
         if (distanceToPlayer > speedUpDistance)
         {
