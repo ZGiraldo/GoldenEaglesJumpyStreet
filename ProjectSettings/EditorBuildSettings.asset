@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2c8136ed3e89d1f48a51286f80f45813
+  - enabled: 1
+    path: Assets/Scenes/JumpyStreet.unity
+    guid: 978903272584f1d4fb0fc90f853c5a33
   m_configObjects: {}
