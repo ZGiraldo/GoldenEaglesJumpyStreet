@@ -831,7 +831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   defaultSpeed: 1
-  fastSpeed: 2
+  fastSpeed: 3
   loseDistance: -3
   speedUpDistance: 3
   isMoving: 1
