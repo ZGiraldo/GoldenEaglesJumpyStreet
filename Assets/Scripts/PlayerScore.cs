@@ -2,27 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerScore : MonoBehaviour
 {
     [SerializeField] ProceduralGenerator procedGenerator = null;
     [SerializeField] Text playerScoreText = null;
+    [SerializeField] Text highScoreText = null;
+    [SerializeField] Text finalScoreText = null;
+    [SerializeField] Text finalHighScoreText = null;
+    [SerializeField] GameObject gameOverPanel = null;
 
-    private int playerScoreCounter = -1;
+    public int score = -1;
     private int dividerCounter = -3;
-    // Start is called before the first frame update
+
     void Start()
     {
-        
+        gameOverPanel.SetActive(false);
+        highScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore").ToString();
     }
 
-    // Update is called once per frame
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha0))//press 0 in the top number line to reset highscore
+        {
+            PlayerPrefs.SetInt("Highscore", 0);
+            highScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore").ToString();
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Terrain" || other.tag == "Divider")
         {
-            playerScoreCounter++;
-            playerScoreText.text = playerScoreCounter.ToString();
+            AddScore();
             other.enabled = false;
         }
 
@@ -42,6 +55,20 @@ public class PlayerScore : MonoBehaviour
         if(other.tag == "Death")
         {
             Destroy(gameObject);
+            gameOverPanel.SetActive(true);
+            finalScoreText.text = "Score: " + score;
+            finalHighScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore").ToString();
+        }
+    }
+
+    public void AddScore()
+    {
+        score++;
+        playerScoreText.text = "Score: " + score.ToString();
+        if(PlayerPrefs.GetInt("Highscore") < score)//set new high score if current highscore is lower than current game score
+        {
+            PlayerPrefs.SetInt("Highscore", score);
+            highScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore").ToString();
         }
     }
 }
