@@ -379,6 +379,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1559343577421319174, guid: b5560324b8e2b49418244ae643f160df, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1559343577546599122, guid: b5560324b8e2b49418244ae643f160df, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8187180150161603144, guid: b5560324b8e2b49418244ae643f160df, type: 3}
       propertyPath: procedGenerator
       value: 
