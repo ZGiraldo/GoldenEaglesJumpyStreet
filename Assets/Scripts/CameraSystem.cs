@@ -30,7 +30,10 @@ public class CameraSystem: MonoBehaviour
         if(isMoving)
         {
             MoveCamera();
-            DistanceChecker();
+            if(playerTransform != null)
+            {
+                DistanceChecker();
+            }
         }
         //Debug.Log(moveSpeed);
     }

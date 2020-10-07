@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DestroyObstacle : MonoBehaviour
 {
+
     public void OnCollisionEnter(Collision collision)
     {
         Destroy(collision.gameObject);

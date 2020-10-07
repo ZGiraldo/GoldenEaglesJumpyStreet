@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 targetPosition;
     Vector3 startPosition;
     bool isMoving;
+    bool onLog;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,25 @@ public class PlayerMovement : MonoBehaviour
         Movement();
     }
 
+    //colliders
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Log"))
+        {
+            onLog = true;
+            transform.parent = other.gameObject.transform;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        transform.parent = null;
+        onLog = false;
+    }
+
+    //functions
+
     void Movement()
     {
         if (isMoving)
@@ -33,6 +54,13 @@ public class PlayerMovement : MonoBehaviour
             if (Vector3.Distance(startPosition, transform.position) > 1f)
             {
                 transform.position = targetPosition;
+
+                if (!onLog)
+                {
+                    //transform.position = new Vector3(Mathf.Round(transform.position.x), transform.position.y, transform.position.z);
+                    transform.position = new Vector3(Mathf.Lerp(transform.position.x, Mathf.Round(transform.position.x), 300 * Time.deltaTime), transform.position.y, transform.position.z);
+                }
+
                 isMoving = false;
                 anim.SetBool("isJumping", false);
                 return;
@@ -43,22 +71,22 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W))
         {
             MovementDirection(Vector3.forward);
-            RotatePlayer(-90, 0, 0);
+            RotatePlayer(0);
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
             MovementDirection(Vector3.back);
-            RotatePlayer(-90, 180, 0);
+            RotatePlayer(180);
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
             MovementDirection(Vector3.left);
-            RotatePlayer(-90, -90, 0);
+            RotatePlayer(-90);
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             MovementDirection(Vector3.right);
-            RotatePlayer(-90, 90, 0);
+            RotatePlayer(90);
         }
 
         Debug.DrawRay(transform.position, Vector3.forward * 0.5f, Color.red);
@@ -76,15 +104,14 @@ public class PlayerMovement : MonoBehaviour
             targetPosition = transform.position + direction;
             startPosition = transform.position;
             isMoving = true;
-
             anim.SetBool("isJumping", true);
         }
 
     }
 
-    void RotatePlayer(float x, float y, float z)
+    void RotatePlayer(float y)
     {
-        Quaternion target = Quaternion.Euler(x, y, z);
+        Quaternion target = Quaternion.Euler(-90, y, 0);
         playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, target, rotationSpeed);
     }
 }
