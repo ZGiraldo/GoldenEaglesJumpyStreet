@@ -10,18 +10,18 @@ public class CameraSystem: MonoBehaviour
     [SerializeField] float speedUpDistance = 0;
     [SerializeField] bool isMoving;
     [SerializeField] Transform playerTransform = null;
-
-  
-    //[SerializeField] float smooth = 0;
     [SerializeField] Vector3 offset = new Vector3(0,0,0);
 
     float moveSpeed;
+
+    public PlayerScore PS;
 
 
     // Start is called before the first frame update
     void Start()
     {
         isMoving = true;
+        PS = FindObjectOfType<PlayerScore>();
     }
 
     // Update is called once per frame
@@ -60,8 +60,9 @@ public class CameraSystem: MonoBehaviour
 
         if( distanceToPlayer < loseDistance)
         {
-            isMoving = false;
             //Player is dead
+            isMoving = false;
+            PS.PlayerDeath();
         }
     }
 

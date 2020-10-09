@@ -103,7 +103,7 @@ public class ProceduralGenerator : MonoBehaviour
     private void GenerateRiver()
     {
         zPosition += 1.5f;
-        Instantiate(terrains[2], new Vector3(0, 0, zPosition), Quaternion.identity, gameObject.transform);
+        Instantiate(terrains[2], new Vector3(0, -0.25f, zPosition), Quaternion.identity, gameObject.transform);
         zPosition += 1.5f;
     }
 }

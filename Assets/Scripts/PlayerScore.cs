@@ -54,10 +54,7 @@ public class PlayerScore : MonoBehaviour
 
         if(other.tag == "Death")
         {
-            Destroy(gameObject);
-            gameOverPanel.SetActive(true);
-            finalScoreText.text = "Score: " + score;
-            finalHighScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore").ToString();
+            PlayerDeath();
         }
     }
 
@@ -70,5 +67,13 @@ public class PlayerScore : MonoBehaviour
             PlayerPrefs.SetInt("Highscore", score);
             highScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore").ToString();
         }
+    }
+
+    public void PlayerDeath()
+    {
+        Destroy(gameObject);
+        gameOverPanel.SetActive(true);
+        finalScoreText.text = "Score: " + score;
+        finalHighScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore").ToString();
     }
 }
