@@ -10,18 +10,17 @@ public class CameraSystem: MonoBehaviour
     [SerializeField] float speedUpDistance = 0;
     [SerializeField] bool isMoving;
     [SerializeField] Transform playerTransform = null;
-    [SerializeField] Vector3 offset = new Vector3(0,0,0);
-
     float moveSpeed;
+    Vector3 offset = new Vector3(0, 0, 0);
 
-    public PlayerScore PS;
-
+    [HideInInspector] public PlayerScore PS;
 
     // Start is called before the first frame update
     void Start()
     {
         isMoving = true;
         PS = FindObjectOfType<PlayerScore>();
+        offset = new Vector3(0, 0.5f, loseDistance);
     }
 
     // Update is called once per frame

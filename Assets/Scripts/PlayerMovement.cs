@@ -107,6 +107,8 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isJumping", true);
         }
 
+        FindObjectOfType<AudioManager>().Play("Jump");
+
     }
 
     void RotatePlayer(float y)

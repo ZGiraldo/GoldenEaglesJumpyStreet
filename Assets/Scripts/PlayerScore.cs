@@ -75,5 +75,7 @@ public class PlayerScore : MonoBehaviour
         gameOverPanel.SetActive(true);
         finalScoreText.text = "Score: " + score;
         finalHighScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore").ToString();
+
+        FindObjectOfType<AudioManager>().Play("Death");
     }
 }
