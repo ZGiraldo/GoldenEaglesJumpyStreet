@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ProceduralGenerator : MonoBehaviour
 {
-    [SerializeField] List<GameObject> terrains = new List<GameObject>();
+    [SerializeField] List<GameObject> dividerVariations = new List<GameObject>();
+    [SerializeField] List<GameObject> riverVariations = new List<GameObject>();
+    [SerializeField] List<GameObject> roadVariations = new List<GameObject>();
 
     [SerializeField] private int terrainLimit = 0;
     private static int terrainLimitStatic = 0;
 
     private int terrainSpawned = 0;
-    private float zPosition = 1;
+    private float zPosition = 4;
 
 
     private static int terrainCounter = 0;
@@ -46,7 +48,7 @@ public class ProceduralGenerator : MonoBehaviour
     void Start()
     {
         terrainLimitStatic = terrainLimit;
-        Instantiate(terrains[0], new Vector3(0,0,.5f), Quaternion.identity, gameObject.transform);
+        Instantiate(dividerVariations[1], new Vector3(0,0,1), Quaternion.identity, gameObject.transform);
         GenerateTerrain();
     }
 
@@ -66,44 +68,38 @@ public class ProceduralGenerator : MonoBehaviour
     {
         while(terrainSpawned < terrainLimit)
         {
-            int randomTerrain = Random.Range(1, 3);
+            int randomTerrain = Random.Range(0, 2);
 
-            if(randomTerrain == 1)
-            {
-                GenerateRiver();
-            }
-            
-            if(randomTerrain == 2)
-            {
-                GenerateStreet();
-            }
-
+            GenerateRiverOrRoad(randomTerrain);
             GenerateDivider();
-            
 
             terrainCounter++;
             terrainSpawned++;
         }
     }
 
-    private void GenerateStreet() //for now the addition to zPosition will be hard coded, make it for flexible later*****
-    {
-        zPosition++;
-        Instantiate(terrains[1], new Vector3(0, 0, zPosition), Quaternion.identity, gameObject.transform);
-        zPosition++;
-    }
-
     private void GenerateDivider()
     {
         zPosition += .5f;
-        Instantiate(terrains[0], new Vector3(0, 0, zPosition), Quaternion.identity, gameObject.transform);
+        Instantiate(dividerVariations[0], new Vector3(0, 0, zPosition), Quaternion.identity, gameObject.transform);
         zPosition += .5f;
     }
 
-    private void GenerateRiver()
+    private void GenerateRiverOrRoad(int random)
     {
-        zPosition += 1.5f;
-        Instantiate(terrains[2], new Vector3(0, -0.25f, zPosition), Quaternion.identity, gameObject.transform);
-        zPosition += 1.5f;
+
+        if(random == 0)
+        {
+            int randomVariation = Random.Range(0, roadVariations.Count);
+            zPosition += randomVariation + 1f;
+            Instantiate(roadVariations[randomVariation], new Vector3(0, 0, zPosition), Quaternion.identity, gameObject.transform);
+            zPosition += randomVariation + 1f;
+        }
+        else
+        {
+            zPosition += 1.5f;
+            Instantiate(riverVariations[Random.Range(0,riverVariations.Count)], new Vector3(0, 0, zPosition), Quaternion.identity, gameObject.transform);
+            zPosition += 1.5f;
+        }
     }
 }
