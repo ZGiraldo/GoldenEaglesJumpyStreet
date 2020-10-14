@@ -39,7 +39,11 @@ public class CameraSystem: MonoBehaviour
 
     void MoveCamera()
     {
-        transform.Translate(transform.forward * moveSpeed * Time.deltaTime);
+        if(playerTransform != null)
+        {
+            transform.position = Vector3.Lerp(transform.position, new Vector3(playerTransform.position.x, transform.position.y, transform.position.z), .02f);
+            transform.Translate(transform.forward * moveSpeed * Time.deltaTime);
+        }   
     }
 
     void DistanceChecker()

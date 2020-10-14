@@ -1824,7 +1824,7 @@ PrefabInstance:
       objectReference: {fileID: 1915968275180298183, guid: 29c7c098a659ef349b4e04b1e07f81ae, type: 3}
     - target: {fileID: 6211753926479900300, guid: 0480e124d55ebd2429ae74efdce37d73, type: 3}
       propertyPath: terrainLimit
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 6211753926479900301, guid: 0480e124d55ebd2429ae74efdce37d73, type: 3}
       propertyPath: m_Name
