@@ -12,13 +12,16 @@ public class PlayerScore : MonoBehaviour
     [SerializeField] Text finalScoreText = null;
     [SerializeField] Text finalHighScoreText = null;
     [SerializeField] GameObject gameOverPanel = null;
+    [SerializeField] GameObject pauseMenu = null;
 
     public int score = -1;
     private int dividerCounter = -3;
 
     void Start()
     {
+        Time.timeScale = 1;
         gameOverPanel.SetActive(false);
+        pauseMenu.SetActive(false);
         highScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore").ToString();
     }
 
@@ -29,6 +32,31 @@ public class PlayerScore : MonoBehaviour
             PlayerPrefs.SetInt("Highscore", 0);
             highScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore").ToString();
         }
+
+        PauseGame();
+    }
+
+    void PauseGame()//press esc to pause. Press again to resume
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale == 1)
+            {
+                Time.timeScale = 0;
+                pauseMenu.SetActive(true);
+            }
+            else if (Time.timeScale == 0)
+            {
+                Time.timeScale = 1;
+                pauseMenu.SetActive(false);
+            }
+        }
+    }
+
+    public void OnClickResumeButton()
+    {
+        Time.timeScale = 1;
+        pauseMenu.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)

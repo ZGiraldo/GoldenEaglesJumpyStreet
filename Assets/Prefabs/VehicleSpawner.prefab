@@ -152,9 +152,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43d7b01c17c6d26409e605165944cbc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  car1: {fileID: 2966447602232481131, guid: 68956b63205d906409cca65d52b557b6, type: 3}
-  car2: {fileID: 5393361084573947228, guid: 15d1c5265de6d1340afa1b753d8a744f, type: 3}
-  car3: {fileID: 5846111148176706129, guid: fdbc0d98001c2244d91907e75825692f, type: 3}
-  car4: {fileID: 3916783141521667734, guid: f3be8ef7a45c56742bde11e92a12fc43, type: 3}
-  car5: {fileID: 4135955911269910746, guid: 884e062e4ea0d304eb9c2cd25a86520d, type: 3}
-  parent: {fileID: 5067575999706406443}
+  obstacles: []
+  spawnerRotation: 0
