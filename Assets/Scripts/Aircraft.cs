@@ -5,20 +5,20 @@ using UnityEngine;
 public class Aircraft : MonoBehaviour
 {
     [SerializeField] float speed = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         Move();
+        Invoke("DestroyObject", 2f);
     }
 
     void Move()
     {
         transform.Translate(Vector3.back * Time.deltaTime * speed, Space.World);
+    }
+
+    private void DestroyObject()
+    {
+        Destroy(gameObject);
     }
 }

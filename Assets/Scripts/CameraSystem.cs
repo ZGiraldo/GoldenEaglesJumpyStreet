@@ -14,7 +14,6 @@ public class CameraSystem: MonoBehaviour
     [SerializeField] Transform playerTransform = null;
     float moveSpeed;
     Vector3 deathoffset;
-    Vector3 aircraftOffset;
 
     [HideInInspector] public PlayerScore PS;
     [HideInInspector] public PlayerMovement PM;
@@ -26,7 +25,6 @@ public class CameraSystem: MonoBehaviour
         PS = FindObjectOfType<PlayerScore>();
         PM = FindObjectOfType<PlayerMovement>();
         deathoffset = new Vector3(0, 0.5f, loseDistance);
-        aircraft.SetActive(true);
     }
 
     // Update is called once per frame
@@ -74,14 +72,12 @@ public class CameraSystem: MonoBehaviour
     }
     IEnumerator LoseByDistance()
     {
-        aircraftOffset = new Vector3(playerTransform.position.x + 0.5f, 2f, playerTransform.position.z + 12f);
+        Vector3 aircraftOffset = new Vector3(playerTransform.position.x + 0.5f, 2f, playerTransform.position.z + 12f);
         isMoving = false;
         PM.isDead = true;
         Instantiate(aircraft, aircraftOffset, aircraft.transform.rotation);
         yield return new WaitForSeconds(1.6f);
         PS.PlayerDeath();
-        //yield return new WaitForSeconds(1f);
-        //aircraft.SetActive(false);
     }
 
     private void OnDrawGizmos()
