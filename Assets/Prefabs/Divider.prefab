@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354736620754956380}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 0.5, z: 1}
+  m_LocalPosition: {x: 5, y: 0, z: 0}
+  m_LocalScale: {x: 30, y: 0.5, z: 1}
   m_Children:
   - {fileID: 6179712398602639271}
   - {fileID: 2115582007742078599}
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1354736620754956380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6588b2ba0373f5d4e97a4828662f4bc7, type: 3}
   m_Name: 
@@ -153,8 +153,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4464768561265739032}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.512, y: 4.02, z: 0.005}
-  m_LocalScale: {x: 0.0256145, y: 7, z: 1}
+  m_LocalPosition: {x: -0.5080001, y: 4.02, z: 0.005}
+  m_LocalScale: {x: 0.017076334, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 4653896716511216029}
   m_RootOrder: 1
@@ -248,8 +248,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8373735986877179355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.489, y: 4.02, z: 0.005}
-  m_LocalScale: {x: 0.0256145, y: 7, z: 1}
+  m_LocalPosition: {x: 0.15933333, y: 4.02, z: 0.005}
+  m_LocalScale: {x: 0.017076334, y: 7, z: 1}
   m_Children: []
   m_Father: {fileID: 4653896716511216029}
   m_RootOrder: 2
@@ -269,7 +269,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8373735986877179355}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -281,7 +281,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8f98c15388d096341acb180b3fb2bb06, type: 2}
+  - {fileID: 2100000, guid: 2cd6b808ba8a78442aa815a4cf817829, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -329,7 +329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 479285161565406254, guid: 8d9c0bd71b7075d41aa421f0b46b30e6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.16666667
       objectReference: {fileID: 0}
     - target: {fileID: 479285161565406254, guid: 8d9c0bd71b7075d41aa421f0b46b30e6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -373,7 +373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 479285161565406254, guid: 8d9c0bd71b7075d41aa421f0b46b30e6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.05
+      value: 0.033333335
       objectReference: {fileID: 0}
     - target: {fileID: 479285161565406254, guid: 8d9c0bd71b7075d41aa421f0b46b30e6, type: 3}
       propertyPath: m_LocalScale.y
