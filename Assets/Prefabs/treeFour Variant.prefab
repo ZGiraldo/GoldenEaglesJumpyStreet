@@ -13,6 +13,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1.49}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &433478058762947847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5016388841201036411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a6f8f111938244091f19c435b4dc99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  yPos: 1
 --- !u!1001 &5286279022421496106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22,15 +35,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e3ebd68d57b8e4c4d9f458a8d1e08df1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.9887505
+      value: -2.9019766
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3ebd68d57b8e4c4d9f458a8d1e08df1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.9573574
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3ebd68d57b8e4c4d9f458a8d1e08df1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 11.092419
+      value: -0.087154865
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e3ebd68d57b8e4c4d9f458a8d1e08df1, type: 3}
       propertyPath: m_LocalRotation.x

@@ -6,6 +6,7 @@ public class StaticObstacleSpawner : MonoBehaviour
 {
     [SerializeField] private List<GameObject> obstacleVariations = new List<GameObject>();
     [SerializeField] private List<bool> ocuppiedPos = new List<bool>();
+    private GameObject obstacleGO = null;
 
     private int randomAmount = 0;
 
@@ -21,7 +22,8 @@ public class StaticObstacleSpawner : MonoBehaviour
             if (!ocuppiedPos[randomXPos])
             {
                 ocuppiedPos[randomXPos] = true;
-                Instantiate(obstacleVariations[Random.Range(0, obstacleVariations.Count)], new Vector3(randomXPos - 9.5f, 1, transform.position.z), Quaternion.Euler(-90,0,0), transform); // subtract (randomXPos/2 - .5) from randomXPos
+                obstacleGO = obstacleVariations[Random.Range(0, obstacleVariations.Count)];
+                Instantiate(obstacleGO, new Vector3(randomXPos - 9.5f, obstacleGO.GetComponent<StaticObstacleRelocator>().yPos, transform.position.z), Quaternion.Euler(-90,0,0), transform); // subtract (randomXPos/2 - .5) from randomXPos
             }
             else
             {
