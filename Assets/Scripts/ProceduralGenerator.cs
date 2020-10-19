@@ -98,7 +98,7 @@ public class ProceduralGenerator : MonoBehaviour
         else
         {
             zPosition += 1.5f;
-            Instantiate(riverVariations[Random.Range(0,riverVariations.Count)], new Vector3(0, 0, zPosition), Quaternion.identity, gameObject.transform);
+            Instantiate(riverVariations[Random.Range(0,riverVariations.Count)], new Vector3(0, -.25f, zPosition), Quaternion.identity, gameObject.transform);
             zPosition += 1.5f;
         }
     }
