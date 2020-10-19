@@ -26,7 +26,7 @@ public class CameraSystem: MonoBehaviour
         PS = FindObjectOfType<PlayerScore>();
         PM = FindObjectOfType<PlayerMovement>();
         deathoffset = new Vector3(0, 0.5f, loseDistance);
-        
+        aircraft.SetActive(true);
     }
 
     // Update is called once per frame
@@ -69,13 +69,19 @@ public class CameraSystem: MonoBehaviour
 
         if( distanceToPlayer < loseDistance)
         {
-            //Player is dead
-            aircraftOffset = new Vector3(playerTransform.position.x + 0.5f, 2f, playerTransform.position.z + 12f);
-            isMoving = false;
-            PM.isDead = true;
-            Instantiate(aircraft, aircraftOffset, aircraft.transform.rotation);
-            Invoke("LoseByDistance", 1.6f);
+            StartCoroutine(LoseByDistance());
         }
+    }
+    IEnumerator LoseByDistance()
+    {
+        aircraftOffset = new Vector3(playerTransform.position.x + 0.5f, 2f, playerTransform.position.z + 12f);
+        isMoving = false;
+        PM.isDead = true;
+        Instantiate(aircraft, aircraftOffset, aircraft.transform.rotation);
+        yield return new WaitForSeconds(1.6f);
+        PS.PlayerDeath();
+        //yield return new WaitForSeconds(1f);
+        //aircraft.SetActive(false);
     }
 
     private void OnDrawGizmos()
@@ -85,10 +91,5 @@ public class CameraSystem: MonoBehaviour
         Gizmos.DrawRay(transform.position + deathoffset, direction);
         Vector3 direction2 = transform.TransformDirection(Vector3.left) * 5;
         Gizmos.DrawRay(transform.position + deathoffset, direction2);
-    }
-
-    void LoseByDistance()
-    {
-        PS.PlayerDeath();
     }
 }
