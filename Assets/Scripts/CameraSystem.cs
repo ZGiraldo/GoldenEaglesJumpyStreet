@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraSystem: MonoBehaviour
 {
+    public GameObject aircraft;
+
     [SerializeField] float defaultSpeed = 0;
     [SerializeField] float fastSpeed = 0;
     [SerializeField] float loseDistance = 0;
@@ -11,16 +13,20 @@ public class CameraSystem: MonoBehaviour
     [SerializeField] bool isMoving;
     [SerializeField] Transform playerTransform = null;
     float moveSpeed;
-    Vector3 offset = new Vector3(0, 0, 0);
+    Vector3 deathoffset;
+    Vector3 aircraftOffset;
 
     [HideInInspector] public PlayerScore PS;
+    [HideInInspector] public PlayerMovement PM;
 
     // Start is called before the first frame update
     void Start()
     {
         isMoving = true;
         PS = FindObjectOfType<PlayerScore>();
-        offset = new Vector3(0, 0.5f, loseDistance);
+        PM = FindObjectOfType<PlayerMovement>();
+        deathoffset = new Vector3(0, 0.5f, loseDistance);
+        
     }
 
     // Update is called once per frame
@@ -64,8 +70,11 @@ public class CameraSystem: MonoBehaviour
         if( distanceToPlayer < loseDistance)
         {
             //Player is dead
+            aircraftOffset = new Vector3(playerTransform.position.x + 0.5f, 2f, playerTransform.position.z + 12f);
             isMoving = false;
-            PS.PlayerDeath();
+            PM.isDead = true;
+            Instantiate(aircraft, aircraftOffset, aircraft.transform.rotation);
+            Invoke("LoseByDistance", 1.6f);
         }
     }
 
@@ -73,8 +82,13 @@ public class CameraSystem: MonoBehaviour
     {
         Gizmos.color = Color.red;
         Vector3 direction = transform.TransformDirection(Vector3.right) * 5;
-        Gizmos.DrawRay(transform.position + offset, direction);
+        Gizmos.DrawRay(transform.position + deathoffset, direction);
         Vector3 direction2 = transform.TransformDirection(Vector3.left) * 5;
-        Gizmos.DrawRay(transform.position + offset, direction2);
+        Gizmos.DrawRay(transform.position + deathoffset, direction2);
+    }
+
+    void LoseByDistance()
+    {
+        PS.PlayerDeath();
     }
 }

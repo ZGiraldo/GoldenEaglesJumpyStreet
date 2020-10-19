@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public GameObject playerModel;
     public Animator anim;
+    public bool isDead;
 
     [SerializeField] float moveSpeed = 0;
     [SerializeField] float length = 0;
@@ -16,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 startPosition;
     bool isMoving;
     bool onLog;
-    bool isfalling;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -99,8 +100,8 @@ public class PlayerMovement : MonoBehaviour
 
     void MovementDirection(Vector3 direction)
     {
-        OnGroundChecker();
-        if (!isfalling)
+        DeathChecker();
+        if (!isDead)
         {
             if (!Physics.Raycast(transform.position, direction, length))
             {
@@ -119,15 +120,11 @@ public class PlayerMovement : MonoBehaviour
         playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, target, rotationSpeed);
     }
 
-    void OnGroundChecker()
+    void DeathChecker()
     {
         if (transform.position.y < 0.60f)
         {
-            isfalling = true;
-        }
-        else
-        {
-            isfalling = false;
+            isDead = true;
         }
     }
 }
