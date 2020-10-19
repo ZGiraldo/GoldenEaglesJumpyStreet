@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 startPosition;
     bool isMoving;
     bool onLog;
+    bool isfalling;
 
     // Start is called before the first frame update
     void Start()
@@ -98,22 +99,35 @@ public class PlayerMovement : MonoBehaviour
 
     void MovementDirection(Vector3 direction)
     {
-
-        if (!Physics.Raycast(transform.position, direction, length))
+        OnGroundChecker();
+        if (!isfalling)
         {
-            targetPosition = transform.position + direction;
-            startPosition = transform.position;
-            isMoving = true;
-            anim.SetBool("isJumping", true);
+            if (!Physics.Raycast(transform.position, direction, length))
+            {
+                targetPosition = transform.position + direction;
+                startPosition = transform.position;
+                isMoving = true;
+                anim.SetBool("isJumping", true);
+                FindObjectOfType<AudioManager>().Play("Jump");
+            }
         }
-
-        FindObjectOfType<AudioManager>().Play("Jump");
-
     }
 
     void RotatePlayer(float y)
     {
         Quaternion target = Quaternion.Euler(-90, y, 0);
         playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, target, rotationSpeed);
+    }
+
+    void OnGroundChecker()
+    {
+        if (transform.position.y < 0.60f)
+        {
+            isfalling = true;
+        }
+        else
+        {
+            isfalling = false;
+        }
     }
 }
