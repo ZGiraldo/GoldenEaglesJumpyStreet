@@ -48,7 +48,7 @@ public class ProceduralGenerator : MonoBehaviour
     void Start()
     {
         terrainLimitStatic = terrainLimit;
-        Instantiate(dividerVariations[1], new Vector3(0,0,1), Quaternion.identity, gameObject.transform);
+        Instantiate(dividerVariations[1], new Vector3(5,0,0), Quaternion.identity, gameObject.transform);
         GenerateTerrain();
     }
 
@@ -81,7 +81,7 @@ public class ProceduralGenerator : MonoBehaviour
     private void GenerateDivider()
     {
         zPosition += .5f;
-        Instantiate(dividerVariations[0], new Vector3(0, 0, zPosition), Quaternion.identity, gameObject.transform);
+        Instantiate(dividerVariations[0], new Vector3(5, 0, zPosition), Quaternion.identity, gameObject.transform);
         zPosition += .5f;
     }
 
@@ -92,13 +92,13 @@ public class ProceduralGenerator : MonoBehaviour
         {
             int randomVariation = Random.Range(0, roadVariations.Count);
             zPosition += randomVariation + 1f;
-            Instantiate(roadVariations[randomVariation], new Vector3(0, 0, zPosition), Quaternion.identity, gameObject.transform);
+            Instantiate(roadVariations[randomVariation], new Vector3(5, 0, zPosition), Quaternion.identity, gameObject.transform);
             zPosition += randomVariation + 1f;
         }
         else
         {
             zPosition += 1.5f;
-            Instantiate(riverVariations[Random.Range(0,riverVariations.Count)], new Vector3(0, -.25f, zPosition), Quaternion.identity, gameObject.transform);
+            Instantiate(riverVariations[Random.Range(0,riverVariations.Count)], new Vector3(5, -.25f, zPosition), Quaternion.identity, gameObject.transform);
             zPosition += 1.5f;
         }
     }
