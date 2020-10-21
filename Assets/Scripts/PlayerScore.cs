@@ -80,7 +80,7 @@ public class PlayerScore : MonoBehaviour
             {
                 dividerCounter++;
             }
-
+            other.enabled = false;
         }
 
         if(other.tag == "Death")
