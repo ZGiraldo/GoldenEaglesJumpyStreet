@@ -14,8 +14,8 @@ public class PlayerScore : MonoBehaviour
     [SerializeField] GameObject gameOverPanel = null;
     [SerializeField] GameObject pauseMenu = null;
 
-    public int score = -1;
-    private int dividerCounter = -3;
+    public int score = 0;
+    private int dividerCounter = -1;
 
     void Start()
     {
@@ -23,6 +23,7 @@ public class PlayerScore : MonoBehaviour
         gameOverPanel.SetActive(false);
         pauseMenu.SetActive(false);
         highScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore").ToString();
+        UpdateScore();
     }
 
     private void Update()
@@ -31,6 +32,14 @@ public class PlayerScore : MonoBehaviour
         {
             PlayerPrefs.SetInt("Highscore", 0);
             highScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore").ToString();
+        }
+
+        if (Input.GetAxis("Vertical") != 0)
+        {
+            if(transform.position.z > score)
+            {
+                UpdateScore();
+            }
         }
 
         PauseGame();
@@ -61,12 +70,6 @@ public class PlayerScore : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Terrain" || other.tag == "Divider")
-        {
-            AddScore();
-            other.enabled = false;
-        }
-
         if(other.tag == "Divider")
         {
             if (dividerCounter > 0)
@@ -86,9 +89,9 @@ public class PlayerScore : MonoBehaviour
         }
     }
 
-    public void AddScore()
+    public void UpdateScore()
     {
-        score++;
+        score = (int)transform.position.z;
         playerScoreText.text = "Score: " + score.ToString();
         if(PlayerPrefs.GetInt("Highscore") < score)//set new high score if current highscore is lower than current game score
         {

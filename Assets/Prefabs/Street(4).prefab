@@ -108,10 +108,6 @@ GameObject:
   - component: {fileID: 1915968275180298177}
   - component: {fileID: 1915968275180298182}
   - component: {fileID: 3883128030413327426}
-  - component: {fileID: 8767730217007761119}
-  - component: {fileID: 789302346602428699}
-  - component: {fileID: 1915968275180298200}
-  - component: {fileID: 1915968275180298201}
   m_Layer: 0
   m_Name: Street(4)
   m_TagString: Terrain
@@ -215,58 +211,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   terrainCounterNum: 0
---- !u!65 &8767730217007761119
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1915968275180298183}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.2, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0.375}
---- !u!65 &789302346602428699
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1915968275180298183}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.2, z: 0.2}
-  m_Center: {x: 0, y: 0, z: -0.375}
---- !u!65 &1915968275180298200
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1915968275180298183}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.2, z: 0.2}
-  m_Center: {x: 0, y: 0, z: -0.125}
---- !u!65 &1915968275180298201
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1915968275180298183}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1.2, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0.125}
 --- !u!1 &5112587808754013243
 GameObject:
   m_ObjectHideFlags: 0
