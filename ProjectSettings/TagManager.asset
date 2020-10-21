@@ -8,6 +8,8 @@ TagManager:
   - Death
   - Divider
   - Log
+  - Water
+  - Car
   layers:
   - Default
   - TransparentFX

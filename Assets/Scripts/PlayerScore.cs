@@ -86,6 +86,19 @@ public class PlayerScore : MonoBehaviour
         if(other.tag == "Death")
         {
             PlayerDeath();
+            FindObjectOfType<AudioManager>().Play("Death");
+        }
+
+        if (other.tag == "Water")
+        {
+            Invoke("PlayerDeath", 0.5f);
+            FindObjectOfType<AudioManager>().Play("Water");
+        }
+
+        if (other.tag == "Car")
+        {
+            PlayerDeath();
+            FindObjectOfType<AudioManager>().Play("Pop");
         }
     }
 
@@ -107,6 +120,6 @@ public class PlayerScore : MonoBehaviour
         finalScoreText.text = "Score: " + score;
         finalHighScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore").ToString();
 
-        FindObjectOfType<AudioManager>().Play("Death");
+        
     }
 }

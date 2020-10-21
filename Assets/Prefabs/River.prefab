@@ -304,7 +304,7 @@ GameObject:
   - component: {fileID: 1169453874267184555}
   m_Layer: 0
   m_Name: DeathCollider
-  m_TagString: Death
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,7 +317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2475054568101060696}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.16666667, y: 0, z: 0}
+  m_LocalPosition: {x: -0.16666667, y: 4.81, z: 0}
   m_LocalScale: {x: 0.6666667, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2467953728635270545}
@@ -334,8 +334,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 1, z: 1}
-  m_Center: {x: 0, y: -5, z: 0}
+  m_Size: {x: 1.95, y: 1, z: 1}
+  m_Center: {x: 0.25, y: -5, z: 0}
 --- !u!1 &2946042737407591796
 GameObject:
   m_ObjectHideFlags: 0

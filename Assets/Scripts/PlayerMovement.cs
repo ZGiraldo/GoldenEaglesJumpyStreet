@@ -38,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
         {
             onLog = true;
             transform.parent = other.gameObject.transform;
+
+            FindObjectOfType<AudioManager>().Play("Wood");
         }
     }
 
@@ -125,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
         if (transform.position.y < 0.60f)
         {
             isDead = true;
+            FindObjectOfType<AudioManager>().Play("Water");
         }
     }
 }

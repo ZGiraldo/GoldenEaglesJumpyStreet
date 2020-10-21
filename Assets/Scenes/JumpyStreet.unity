@@ -1915,10 +1915,25 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Water
+    clip: {fileID: 8300000, guid: 4c4aad8a58c0f1c40b4ac56de0046358, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: Pop
+    clip: {fileID: 8300000, guid: d70ecff05be9ae3458a4aff1e215294a, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+  - name: Wood
+    clip: {fileID: 8300000, guid: 945adbba73e1f204993d7bba52a746f2, type: 3}
+    volume: 0.2
+    pitch: 1
+    source: {fileID: 0}
+  - name: Aircraft
+    clip: {fileID: 8300000, guid: d42968fd8f92f664ba431adf87ec0678, type: 3}
+    volume: 0.2
+    pitch: 1
     source: {fileID: 0}
 --- !u!82 &1657560366
 AudioSource:

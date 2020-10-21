@@ -76,8 +76,10 @@ public class CameraSystem: MonoBehaviour
         isMoving = false;
         PM.isDead = true;
         Instantiate(aircraft, aircraftOffset, aircraft.transform.rotation);
+        FindObjectOfType<AudioManager>().Play("Aircraft");
         yield return new WaitForSeconds(1.6f);
         PS.PlayerDeath();
+        FindObjectOfType<AudioManager>().Play("Death");
     }
 
     private void OnDrawGizmos()
