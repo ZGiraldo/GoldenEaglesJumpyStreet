@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1411157782598976155}
   m_Layer: 0
   m_Name: Tunnel (1)
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 7005264785775254389}
   m_Layer: 0
   m_Name: Tunnel
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -376,7 +376,7 @@ GameObject:
   - component: {fileID: 9023092583808034649}
   m_Layer: 0
   m_Name: Right Border
-  m_TagString: Untagged
+  m_TagString: Death
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -389,7 +389,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8051974808799904455}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.1746667, y: 3.25, z: 0.003000021}
+  m_LocalPosition: {x: 0.19, y: 3.25, z: 0.003000021}
   m_LocalScale: {x: 0.013012872, y: 7, z: 0.992605}
   m_Children: []
   m_Father: {fileID: 1915968275180298179}
@@ -422,7 +422,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2cd6b808ba8a78442aa815a4cf817829, type: 2}
+  - {fileID: 2100000, guid: 0e2b01770ef996248813886cbcca6e16, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
