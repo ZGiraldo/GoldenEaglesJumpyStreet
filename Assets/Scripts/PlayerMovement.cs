@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MovementDirection(Vector3 direction)
     {
-        DeathChecker();
+        FallDeathChecker();
         if (!isDead)
         {
             if (!Physics.Raycast(transform.position, direction, length))
@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
         playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, target, rotationSpeed);
     }
 
-    void DeathChecker()
+    void FallDeathChecker()
     {
         if (transform.position.y < 0.60f)
         {
