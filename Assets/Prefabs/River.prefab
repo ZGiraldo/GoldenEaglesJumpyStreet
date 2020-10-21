@@ -530,6 +530,14 @@ PrefabInstance:
       propertyPath: obstacles.Array.data[4]
       value: 
       objectReference: {fileID: 4135955911269910746, guid: 884e062e4ea0d304eb9c2cd25a86520d, type: 3}
+    - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
+      propertyPath: spawnDelay1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
+      propertyPath: spawnDelay2
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5067575999706406443, guid: c38947162332e174dbd142f337f5d463, type: 3}
       propertyPath: m_Name
       value: 'VehicleSpawner '
@@ -644,6 +652,14 @@ PrefabInstance:
       propertyPath: obstacles.Array.data[4]
       value: 
       objectReference: {fileID: 4135955911269910746, guid: 884e062e4ea0d304eb9c2cd25a86520d, type: 3}
+    - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
+      propertyPath: spawnDelay1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
+      propertyPath: spawnDelay2
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5067575999706406443, guid: c38947162332e174dbd142f337f5d463, type: 3}
       propertyPath: m_Name
       value: VehicleSpawner
@@ -754,6 +770,14 @@ PrefabInstance:
       propertyPath: obstacles.Array.data[4]
       value: 
       objectReference: {fileID: 4135955911269910746, guid: 884e062e4ea0d304eb9c2cd25a86520d, type: 3}
+    - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
+      propertyPath: spawnDelay1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
+      propertyPath: spawnDelay2
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5067575999706406443, guid: c38947162332e174dbd142f337f5d463, type: 3}
       propertyPath: m_Name
       value: VehicleSpawner
