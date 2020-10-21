@@ -91,7 +91,7 @@ BoxCollider:
   m_GameObject: {fileID: 893937973552567059}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 7287697673945976957}
   m_Layer: 0
   m_Name: Tunnel (1)
-  m_TagString: Death
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -287,7 +287,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1064489444576502538}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -334,7 +334,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2.5, y: 1, z: 1}
   m_Center: {x: 0, y: -5, z: 0}
 --- !u!1 &2946042737407591796
 GameObject:
@@ -364,7 +364,7 @@ Transform:
   m_GameObject: {fileID: 2946042737407591796}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.5058667, y: 3.35, z: -0.0050001144}
-  m_LocalScale: {x: -0.012435445, y: 7, z: 0.9890559}
+  m_LocalScale: {x: 0.01243544, y: 7, z: 0.9890559}
   m_Children: []
   m_Father: {fileID: 2467953728635270545}
   m_RootOrder: 4
@@ -427,7 +427,7 @@ BoxCollider:
   m_GameObject: {fileID: 2946042737407591796}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -558,7 +558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5067575999645092393, guid: c38947162332e174dbd142f337f5d463, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20
+      value: 22.83
       objectReference: {fileID: 0}
     - target: {fileID: 5067575999706406437, guid: c38947162332e174dbd142f337f5d463, type: 3}
       propertyPath: m_LocalPosition.x

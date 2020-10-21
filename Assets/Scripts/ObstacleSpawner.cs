@@ -7,6 +7,8 @@ public class ObstacleSpawner : MonoBehaviour
     [SerializeField] List<GameObject> obstacles = new List<GameObject>();
 
     [SerializeField] int spawnerRotation = 0; //should be either 90 or 270
+    [SerializeField] float spawnDelay1 = .5f;
+    [SerializeField] float spawnDelay2 = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +27,7 @@ public class ObstacleSpawner : MonoBehaviour
 
     public void SpawnDelay()
     {
-        float num = Random.Range(.5f, 2);
+        float num = Random.Range(spawnDelay1, spawnDelay2);
 
         StartCoroutine(Delay(num));
     }
