@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CameraSystem: MonoBehaviour
@@ -21,7 +22,7 @@ public class CameraSystem: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isMoving = true;
+        isMoving = false;
         PS = FindObjectOfType<PlayerScore>();
         PM = FindObjectOfType<PlayerMovement>();
         deathoffset = new Vector3(0, 0.5f, loseDistance);
@@ -30,7 +31,8 @@ public class CameraSystem: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isMoving)
+        StartCameraChecker();
+        if (isMoving)
         {
             MoveCamera();
             if(playerTransform != null)
@@ -43,7 +45,7 @@ public class CameraSystem: MonoBehaviour
 
     void MoveCamera()
     {
-        if(playerTransform != null)
+        if (playerTransform != null)
         {
             transform.position = Vector3.Lerp(transform.position, new Vector3(playerTransform.position.x, transform.position.y, transform.position.z), .02f);
             transform.Translate(transform.forward * moveSpeed * Time.deltaTime);
@@ -57,7 +59,6 @@ public class CameraSystem: MonoBehaviour
 
         if (distanceToPlayer > speedUpDistance)
         {
-            //transform.position = Vector3.Lerp(transform.position, playerTransform.position + offset, smooth);
             moveSpeed = Mathf.Lerp(moveSpeed, fastSpeed, Time.deltaTime);
         }
         else
@@ -65,7 +66,7 @@ public class CameraSystem: MonoBehaviour
             moveSpeed = Mathf.Lerp(moveSpeed, defaultSpeed, Time.deltaTime);
         }
 
-        if( distanceToPlayer < loseDistance)
+        if( distanceToPlayer < loseDistance && PM.onLog == false)
         {
             StartCoroutine(LoseByDistance());
         }
@@ -82,6 +83,18 @@ public class CameraSystem: MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Death");
     }
 
+    void StartCameraChecker()
+    {
+        if (playerTransform != null && PM.isDead == false)
+        {
+            float playerZPosition = playerTransform.position.z;
+            if (playerZPosition > 0.5f)
+            {
+                isMoving = true;
+            }
+        }
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -90,4 +103,5 @@ public class CameraSystem: MonoBehaviour
         Vector3 direction2 = transform.TransformDirection(Vector3.left) * 5;
         Gizmos.DrawRay(transform.position + deathoffset, direction2);
     }
+
 }

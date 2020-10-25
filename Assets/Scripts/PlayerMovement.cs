@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject playerModel;
     public Animator anim;
     public bool isDead;
+    public bool onLog;
 
     [SerializeField] float moveSpeed = 0;
     [SerializeField] float length = 0;
@@ -16,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 targetPosition;
     Vector3 startPosition;
     bool isMoving;
-    bool onLog;
+   
    
 
     // Start is called before the first frame update
@@ -58,13 +59,12 @@ public class PlayerMovement : MonoBehaviour
             if (Vector3.Distance(startPosition, transform.position) > 1f)
             {
                 transform.position = targetPosition;
+                float roundedZposition = Mathf.Lerp(transform.position.x, Mathf.Round(transform.position.x), 50 * Time.deltaTime);
 
                 if (!onLog)
                 {
-                    //transform.position = new Vector3(Mathf.Round(transform.position.x), transform.position.y, transform.position.z);
-                    transform.position = new Vector3(Mathf.Lerp(transform.position.x, Mathf.Round(transform.position.x), 300 * Time.deltaTime), transform.position.y, transform.position.z);
+                    transform.position = new Vector3(roundedZposition, transform.position.y, transform.position.z);
                 }
-
                 isMoving = false;
                 anim.SetBool("isJumping", false);
                 return;
