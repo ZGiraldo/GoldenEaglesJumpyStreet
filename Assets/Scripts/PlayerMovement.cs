@@ -72,7 +72,8 @@ public class PlayerMovement : MonoBehaviour
             transform.position += (targetPosition - startPosition) * moveSpeed * Time.deltaTime;
             return;
         }
-        if (Input.GetKeyDown(KeyCode.W))
+
+        /*if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             MovementDirection(Vector3.forward);
             RotatePlayer(0);
@@ -91,7 +92,34 @@ public class PlayerMovement : MonoBehaviour
         {
             MovementDirection(Vector3.right);
             RotatePlayer(90);
+        }*/
+
+
+        if (Input.anyKeyDown)
+        {
+            if (Input.GetAxisRaw("Horizontal") > 0)
+            {
+                MovementDirection(Vector3.right);
+                RotatePlayer(90);
+            }
+            if (Input.GetAxisRaw("Horizontal") < 0)
+            {
+                MovementDirection(Vector3.left);
+                RotatePlayer(-90);
+            }
+            if(Input.GetAxisRaw("Vertical") > 0)
+            {
+                MovementDirection(Vector3.forward);
+                RotatePlayer(0);
+            }
+            if(Input.GetAxisRaw("Vertical") < 0)
+            {
+                MovementDirection(Vector3.back);
+                RotatePlayer(180);
+            }
+            
         }
+
 
         Debug.DrawRay(transform.position, Vector3.forward * 0.5f, Color.red);
         Debug.DrawRay(transform.position, Vector3.back * 0.5f, Color.red);
