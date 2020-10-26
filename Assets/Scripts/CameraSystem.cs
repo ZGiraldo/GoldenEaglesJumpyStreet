@@ -79,7 +79,7 @@ public class CameraSystem: MonoBehaviour
         Instantiate(aircraft, aircraftOffset, aircraft.transform.rotation);
         FindObjectOfType<AudioManager>().Play("Aircraft");
         yield return new WaitForSeconds(1.6f);
-        PS.PlayerDeath();
+        PS.GameOver();
         FindObjectOfType<AudioManager>().Play("Death");
     }
 
