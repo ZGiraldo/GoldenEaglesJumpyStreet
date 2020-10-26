@@ -954,10 +954,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1559343577421319171, guid: b5560324b8e2b49418244ae643f160df, type: 3}
-      propertyPath: moveSpeed
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 1559343577421319172, guid: b5560324b8e2b49418244ae643f160df, type: 3}
       propertyPath: m_Name
       value: Player
@@ -990,22 +986,6 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 387373861}
-    - target: {fileID: 8187180150161603144, guid: b5560324b8e2b49418244ae643f160df, type: 3}
-      propertyPath: waterDeathEffect
-      value: 
-      objectReference: {fileID: 6382802057643187241, guid: f465344a35d728740953a2cd0290e788, type: 3}
-    - target: {fileID: 8187180150161603144, guid: b5560324b8e2b49418244ae643f160df, type: 3}
-      propertyPath: carDeathEffect
-      value: 
-      objectReference: {fileID: 6382802057643187241, guid: 848a3af465c2e0a44ad7d7cc99633c20, type: 3}
-    - target: {fileID: 8187180150161603144, guid: b5560324b8e2b49418244ae643f160df, type: 3}
-      propertyPath: carDeathEffectOne
-      value: 
-      objectReference: {fileID: 6382802057643187241, guid: 848a3af465c2e0a44ad7d7cc99633c20, type: 3}
-    - target: {fileID: 8187180150161603144, guid: b5560324b8e2b49418244ae643f160df, type: 3}
-      propertyPath: carDeathEffectTwo
-      value: 
-      objectReference: {fileID: 6382802057643187241, guid: 5851b8a48743e624a8ce3b2ac67719dd, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5560324b8e2b49418244ae643f160df, type: 3}
 --- !u!1 &753221753
