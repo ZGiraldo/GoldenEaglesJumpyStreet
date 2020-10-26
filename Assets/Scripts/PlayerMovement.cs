@@ -100,10 +100,13 @@ public class PlayerMovement : MonoBehaviour
 
     void MovementDirection(Vector3 direction)
     {
+        Ray ray = new Ray(transform.position, direction);
+        RaycastHit hit;
         FallDeathChecker();
         if (!isDead)
         {
-            if (!Physics.Raycast(transform.position, direction, length))
+            //!Physics.Raycast(transform.position, direction, length)
+            if (!Physics.Raycast(ray, out hit, length) || hit.collider.tag.Equals("Trees"))
             {
                 targetPosition = new Vector3(Mathf.Round(transform.position.x), transform.position.y, transform.position.z) + direction;
                 startPosition = transform.position;
