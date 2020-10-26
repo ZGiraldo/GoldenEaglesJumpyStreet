@@ -14,6 +14,9 @@ public class PlayerScore : MonoBehaviour
     [SerializeField] GameObject gameOverPanel = null;
     [SerializeField] GameObject pauseMenu = null;
 
+    public GameObject waterDeathEffect;
+    public GameObject carDeathEffectOne;
+    public GameObject carDeathEffectTwo;
     public int score = 0;
     private int dividerCounter = -1;
 
@@ -92,12 +95,15 @@ public class PlayerScore : MonoBehaviour
         if (other.tag == "Water")
         {
             Invoke("PlayerDeath", 0.5f);
+            GenerateDeathEffect(waterDeathEffect, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z));
             FindObjectOfType<AudioManager>().Play("Water");
         }
 
         if (other.tag == "Car")
         {
             PlayerDeath();
+            GenerateDeathEffect(carDeathEffectOne, transform.position);
+            GenerateDeathEffect(carDeathEffectTwo, transform.position);
             FindObjectOfType<AudioManager>().Play("Pop");
         }
     }
@@ -119,7 +125,11 @@ public class PlayerScore : MonoBehaviour
         gameOverPanel.SetActive(true);
         finalScoreText.text = "Score: " + score;
         finalHighScoreText.text = "High Score: " + PlayerPrefs.GetInt("Highscore").ToString();
+    }
 
-        
+    void GenerateDeathEffect(GameObject deathEffect, Vector3 location)
+    {
+        GameObject tempEffect = (GameObject)Instantiate(deathEffect, transform.position, transform.rotation);
+        Destroy(tempEffect, 10f);
     }
 }
