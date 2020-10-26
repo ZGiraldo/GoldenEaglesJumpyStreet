@@ -596,7 +596,7 @@ PrefabInstance:
     - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
       propertyPath: obstacles.Array.data[0]
       value: 
-      objectReference: {fileID: 5354790468183909877, guid: 0c4e523914d224e4bab9ac1d9ae95ca3, type: 3}
+      objectReference: {fileID: 2564659024666254647, guid: 7cce3beb9c1167a409bf37e3510e865d, type: 3}
     - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
       propertyPath: obstacles.Array.data[1]
       value: 
@@ -718,7 +718,7 @@ PrefabInstance:
     - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
       propertyPath: obstacles.Array.data[0]
       value: 
-      objectReference: {fileID: 5354790468183909877, guid: 0c4e523914d224e4bab9ac1d9ae95ca3, type: 3}
+      objectReference: {fileID: 2564659024666254647, guid: 7cce3beb9c1167a409bf37e3510e865d, type: 3}
     - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
       propertyPath: obstacles.Array.data[1]
       value: 
@@ -779,7 +779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5067575999706406437, guid: c38947162332e174dbd142f337f5d463, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.34999976
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 5067575999706406437, guid: c38947162332e174dbd142f337f5d463, type: 3}
       propertyPath: m_LocalRotation.x
@@ -836,7 +836,7 @@ PrefabInstance:
     - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
       propertyPath: obstacles.Array.data[0]
       value: 
-      objectReference: {fileID: 5354790468183909877, guid: 0c4e523914d224e4bab9ac1d9ae95ca3, type: 3}
+      objectReference: {fileID: 2564659024666254647, guid: 7cce3beb9c1167a409bf37e3510e865d, type: 3}
     - target: {fileID: 5067575999706406442, guid: c38947162332e174dbd142f337f5d463, type: 3}
       propertyPath: obstacles.Array.data[1]
       value: 
