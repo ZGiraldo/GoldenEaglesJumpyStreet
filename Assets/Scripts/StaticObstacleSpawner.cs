@@ -23,7 +23,7 @@ public class StaticObstacleSpawner : MonoBehaviour
             {
                 ocuppiedPos[randomXPos] = true;
                 obstacleGO = obstacleVariations[Random.Range(0, obstacleVariations.Count)];
-                Instantiate(obstacleGO, new Vector3(randomXPos - 9.5f, obstacleGO.GetComponent<StaticObstacleRelocator>().yPos, transform.position.z), Quaternion.Euler(-90,0,0), transform); // subtract (randomXPos/2 - .5) from randomXPos
+                Instantiate(obstacleGO, new Vector3(randomXPos - 9f, obstacleGO.GetComponent<StaticObstacleRelocator>().yPos, transform.position.z), Quaternion.Euler(-90,0,0), transform); // subtract (randomXPos/2 - .5) from randomXPos
             }
             else
             {

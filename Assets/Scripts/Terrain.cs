@@ -13,7 +13,7 @@ public class Terrain : MonoBehaviour
 
     public void Update()
     {
-        if (terrainCounterNum + ProceduralGenerator.TerrainLimitStatic == ProceduralGenerator.TerrainCounter)
+        if (terrainCounterNum + ProceduralGenerator.TerrainLimitStatic == ProceduralGenerator.TerrainCounter - 1)
         {
             Destroy(gameObject);
         }
