@@ -95,7 +95,7 @@ public class PlayerScore : MonoBehaviour
         if (other.tag == "Water")
         {
             Invoke("PlayerDeath", 0.5f);
-            GenerateDeathEffect(waterDeathEffect, new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z));
+            GenerateDeathEffect(waterDeathEffect, new Vector3(transform.position.x, transform.position.y - 0.2f, transform.position.z));
             FindObjectOfType<AudioManager>().Play("Water");
         }
 
@@ -129,7 +129,7 @@ public class PlayerScore : MonoBehaviour
 
     void GenerateDeathEffect(GameObject deathEffect, Vector3 location)
     {
-        GameObject tempEffect = (GameObject)Instantiate(deathEffect, transform.position, transform.rotation);
+        GameObject tempEffect = (GameObject)Instantiate(deathEffect, location, transform.rotation);
         Destroy(tempEffect, 10f);
     }
 }
