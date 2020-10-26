@@ -16,7 +16,7 @@ public class ObstacleSpawner : MonoBehaviour
         SpawnCar();
     }
 
-    private void SpawnCar()
+    private void SpawnCar()//instantiates an object in a specified direction, object that spawns is randomly chosen out of the list of objects for that particular spawner
     {
         int num = Random.Range(0, obstacles.Count);
 
@@ -25,14 +25,14 @@ public class ObstacleSpawner : MonoBehaviour
     }
         
 
-    public void SpawnDelay()
+    public void SpawnDelay()//set a minimum and a maximum amount of time in between spawns, chosen randomly
     {
         float num = Random.Range(spawnDelay1, spawnDelay2);
 
         StartCoroutine(Delay(num));
     }
 
-    IEnumerator Delay(float time)
+    IEnumerator Delay(float time)//waits the given amount of time, then spawn a new object
     {
         yield return new WaitForSeconds(time);
         SpawnCar();

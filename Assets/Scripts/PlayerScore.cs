@@ -65,7 +65,7 @@ public class PlayerScore : MonoBehaviour
         }
     }
 
-    public void OnClickResumeButton()
+    public void OnClickResumeButton()//unpause game with button
     {
         Time.timeScale = 1;
         pauseMenu.SetActive(false);
@@ -86,20 +86,20 @@ public class PlayerScore : MonoBehaviour
             other.enabled = false;
         }
 
-        if(other.tag == "Death")
+        if(other.tag == "Death")//destroy player and end game, play a sound
         {
             PlayerDeath();
             FindObjectOfType<AudioManager>().Play("Death");
         }
 
-        if (other.tag == "Water")
+        if (other.tag == "Water")//play a sound and trigger particle effect
         {
             Invoke("PlayerDeath", 0.5f);
             GenerateDeathEffect(waterDeathEffect, new Vector3(transform.position.x, transform.position.y - 0.2f, transform.position.z));
             FindObjectOfType<AudioManager>().Play("Water");
         }
 
-        if (other.tag == "Car")
+        if (other.tag == "Car")//kill player, play sound effect, trigger particle affect
         {
             PlayerDeath();
             GenerateDeathEffect(carDeathEffectOne, transform.position);
@@ -108,7 +108,7 @@ public class PlayerScore : MonoBehaviour
         }
     }
 
-    public void UpdateScore()
+    public void UpdateScore()//adds a point each time the player moves forwards
     {
         score = (int)transform.position.z;
         playerScoreText.text = "Score: " + score.ToString();
@@ -119,7 +119,7 @@ public class PlayerScore : MonoBehaviour
         }
     }
 
-    public void PlayerDeath()
+    public void PlayerDeath()//destroys the player, activates game over panel, display the current and high scores
     {
         Destroy(gameObject);
         gameOverPanel.SetActive(true);
