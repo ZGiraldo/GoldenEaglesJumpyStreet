@@ -1143,8 +1143,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1572209147}
-        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+      - m_Target: {fileID: 1572209149}
+        m_TargetAssemblyTypeName: SceneManagerScript, Assembly-CSharp
         m_MethodName: OnClickPlayButton
         m_Mode: 1
         m_Arguments:
@@ -2105,6 +2105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1572209148}
   - component: {fileID: 1572209147}
+  - component: {fileID: 1572209149}
   m_Layer: 0
   m_Name: UIController
   m_TagString: Untagged
@@ -2140,6 +2141,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1572209149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572209146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1633b28bb822cd24f8c0b7e3762110cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1642510294
 GameObject:
   m_ObjectHideFlags: 0
