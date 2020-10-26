@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float moveSpeed = 0;
     [SerializeField] float length = 0;
-    [SerializeField] float rotationSpeed = 0;
 
     Vector3 targetPosition;
     Vector3 startPosition;
@@ -59,12 +58,6 @@ public class PlayerMovement : MonoBehaviour
             if (Vector3.Distance(startPosition, transform.position) > 1f)
             {
                 transform.position = targetPosition;
-                float roundedZposition = Mathf.Lerp(transform.position.x, Mathf.Round(transform.position.x), 50 * Time.deltaTime);
-
-                if (!onLog)
-                {
-                    transform.position = new Vector3(roundedZposition, transform.position.y, transform.position.z);
-                }
                 isMoving = false;
                 anim.SetBool("isJumping", false);
                 return;
@@ -72,28 +65,6 @@ public class PlayerMovement : MonoBehaviour
             transform.position += (targetPosition - startPosition) * moveSpeed * Time.deltaTime;
             return;
         }
-
-        /*if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            MovementDirection(Vector3.forward);
-            RotatePlayer(0);
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            MovementDirection(Vector3.back);
-            RotatePlayer(180);
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            MovementDirection(Vector3.left);
-            RotatePlayer(-90);
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
-        {
-            MovementDirection(Vector3.right);
-            RotatePlayer(90);
-        }*/
-
 
         if (Input.anyKeyDown)
         {
@@ -117,7 +88,6 @@ public class PlayerMovement : MonoBehaviour
                 MovementDirection(Vector3.back);
                 RotatePlayer(180);
             }
-            
         }
 
 
@@ -135,7 +105,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!Physics.Raycast(transform.position, direction, length))
             {
-                targetPosition = transform.position + direction;
+                targetPosition = new Vector3(Mathf.Round(transform.position.x), transform.position.y, transform.position.z) + direction;
                 startPosition = transform.position;
                 isMoving = true;
                 anim.SetBool("isJumping", true);
@@ -147,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
     void RotatePlayer(float y)
     {
         Quaternion target = Quaternion.Euler(-90, y, 0);
-        playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, target, rotationSpeed);
+        playerModel.transform.rotation = target;
     }
 
     void FallDeathChecker()
